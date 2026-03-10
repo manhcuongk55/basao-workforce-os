@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Register as a Workforce Import Partner — Submit company information, legal documents, and immigration support details to join our platform.">
+    <title>Partner Registration — Basao Workforce OS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌏</text></svg>">
+    <style>
+        /* ===== FORM STYLES ===== */
+        .form-page {
+            padding-top: 100px;
+        }
+
+        .form-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0e7490 100%);
+            padding: var(--space-4xl) 0 var(--space-3xl);
+            text-align: center;
+            color: #fff;
+        }
+
+        .form-hero h1 {
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            margin-bottom: var(--space-md);
+        }
+
+        .form-hero p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 580px;
+            margin: 0 auto;
+            font-size: var(--font-size-lg);
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: -3rem auto var(--space-4xl);
+            background: var(--white);
+            border-radius: var(--radius-2xl);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            padding: var(--space-3xl) var(--space-3xl);
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-section {
+            margin-bottom: var(--space-3xl);
+            padding-bottom: var(--space-2xl);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: var(--space-xl);
+        }
+
+        .form-section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+
+        .form-section-number {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        .form-section-title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: var(--space-xs);
+            font-size: var(--font-size-sm);
+        }
+
+        .form-label .required {
+            color: #ef4444;
+            margin-left: 2px;
+        }
+
+        .form-hint {
+            color: var(--gray-400);
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            font-family: inherit;
+            font-size: var(--font-size-base);
+            color: var(--gray-900);
+            background: var(--white);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--gray-300);
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-select {
+            cursor: pointer;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+
+        /* File upload */
+        .file-upload {
+            border: 2px dashed var(--gray-200);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-upload:hover {
+            border-color: var(--primary);
+            background: rgba(14, 116, 144, 0.02);
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-upload-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .file-upload-text {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: var(--font-size-sm);
+        }
+
+        .file-upload-hint {
+            color: var(--gray-400);
+            font-size: 0.75rem;
+            margin-top: 4px;
+        }
+
+        /* Photo grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--space-md);
+        }
+
+        .photo-upload {
+            aspect-ratio: 1;
+            border: 2px dashed var(--gray-200);
+            border-radius: var(--radius-xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            transition: border-color 0.2s;
+            overflow: hidden;
+        }
+
+        .photo-upload:hover {
+            border-color: var(--primary);
+        }
+
+        .photo-upload input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .photo-upload span {
+            font-size: 1.5rem;
+        }
+
+        .photo-upload small {
+            font-size: 0.7rem;
+            color: var(--gray-400);
+            margin-top: 4px;
+        }
+
+        /* Radio / Checkbox */
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: 0.75rem 1rem;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            margin-bottom: var(--space-sm);
+        }
+
+        .form-check:hover {
+            border-color: var(--primary);
+            background: rgba(14, 116, 144, 0.02);
+        }
+
+        .form-check input[type="radio"],
+        .form-check input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .form-check label {
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .form-checks-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-sm);
+        }
+
+        /* Submit */
+        .form-submit {
+            text-align: center;
+            padding-top: var(--space-xl);
+        }
+
+        .form-submit .btn {
+            padding: 1rem 3rem;
+            font-size: var(--font-size-lg);
+        }
+
+        /* Success message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: var(--space-3xl);
+        }
+
+        .form-success.active {
+            display: block;
+        }
+
+        .form-success-icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-success h2 {
+            color: var(--gray-900);
+            margin-bottom: var(--space-md);
+        }
+
+        .form-success p {
+            color: var(--gray-500);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                margin: -2rem var(--space-md) var(--space-3xl);
+                padding: var(--space-xl);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .form-checks-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="form-page">
+
+    <!-- ========== HEADER ========== -->
+    <header class="header scrolled" id="header">
+        <div class="container">
+            <a href="index.html" class="header-logo" style="color: var(--gray-900);">
+                <div class="logo-icon">🌏</div>
+                <span>Basao<span style="font-weight:400; opacity:0.7;">OS</span></span>
+            </a>
+            <nav class="header-nav" id="headerNav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="talent-import.html">Talent Import</a></li>
+                    <li><a href="tech-export.html">Tech Export</a></li>
+                    <li><a href="worker-health.html">Health</a></li>
+                    <li><a href="basao-finance.html">Basao Finance</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#" class="btn btn-outline"
+                        style="color: var(--primary); border-color: var(--primary);">Login</a>
+                    <a href="partner-register.html" class="btn btn-accent">Register</a>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="form-hero">
+        <div class="container">
+            <span class="section-badge"
+                style="background: rgba(255,255,255,0.12); color: var(--accent-light); margin-bottom: var(--space-md); display: inline-block;">Workforce
+                Import Partner</span>
+            <h1>Partner Registration</h1>
+            <p>Submit your company information, legal documents, and immigration support details to join our global
+                workforce mobility platform.</p>
+        </div>
+    </section>
+
+    <!-- ========== FORM ========== -->
+    <div class="container">
+        <div class="form-container" id="registrationForm">
+
+            <form id="partnerForm" onsubmit="handleSubmit(event)">
+
+                <!-- Section 1: Company Information -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <div class="form-section-number">1</div>
+                        <div class="form-section-title">Company Information</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Company Name <span class="required">*</span></label>
+                        <input type="text" class="form-input" placeholder="e.g. DMC Digital Technical Management Group"
+                            required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Business Registration Number <span
+                                    class="required">*</span></label>
+                            <input type="text" class="form-input" placeholder="Enter registration number" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Country <span class="required">*</span></label>
+                            <select class="form-select" required>
+                                <option value="" disabled selected>Select country</option>
+                                <option value="vietnam">Vietnam</option>
+                                <option value="japan">Japan</option>
+                                <option value="korea">South Korea</option>
+                                <option value="germany">Germany</option>
+                                <option value="singapore">Singapore</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Company Address <span class="required">*</span></label>
+                        <input type="text" class="form-input"
+                            placeholder="Full address (after merger / updated address)" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Company Phone Number <span class="required">*</span></label>
+                            <input type="tel" class="form-input" placeholder="+84 xxx xxx xxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Company Email <span class="required">*</span></label>
+                            <input type="email" class="form-input" placeholder="company@domain.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Legal Documents -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <div class="form-section-number">2</div>
+                        <div class="form-section-title">Company Legal Documents</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Business Registration Certificate <span
+                                class="required">*</span></label>
+                        <div class="file-upload">
+                            <input type="file" accept=".pdf,.jpg,.jpeg,.png" id="bizLicense">
+                            <div class="file-upload-icon">📄</div>
+                            <div class="file-upload-text">Click to upload or drag & drop</div>
+                            <div class="file-upload-hint">PDF, JPG or PNG — Max 10MB</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Additional Operational License (if applicable)</label>
+                        <div class="file-upload">
+                            <input type="file" accept=".pdf,.jpg,.jpeg,.png" id="additionalLicense">
+                            <div class="file-upload-icon">📋</div>
+                            <div class="file-upload-text">Click to upload or drag & drop</div>
+                            <div class="file-upload-hint">PDF, JPG or PNG — Max 10MB (Optional)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Office Verification -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <div class="form-section-number">3</div>
+                        <div class="form-section-title">Office / Factory Verification</div>
+                    </div>
+
+                    <p style="color: var(--gray-500); margin-bottom: var(--space-lg); font-size: var(--font-size-sm);">
+                        Please upload <strong>5 photos</strong> showing the company office or factory. Must include
+                        company signboard, exterior and interior views.
+                    </p>
+
+                    <div class="photo-grid">
+                        <div class="photo-upload">
+                            <input type="file" accept="image/*">
+                            <span>📷</span>
+                            <small>Photo 1</small>
+                        </div>
+                        <div class="photo-upload">
+                            <input type="file" accept="image/*">
+                            <span>📷</span>
+                            <small>Photo 2</small>
+                        </div>
+                        <div class="photo-upload">
+                            <input type="file" accept="image/*">
+                            <span>📷</span>
+                            <small>Photo 3</small>
+                        </div>
+                        <div class="photo-upload">
+                            <input type="file" accept="image/*">
+                            <span>📷</span>
+                            <small>Photo 4</small>
+                        </div>
+                        <div class="photo-upload">
+                            <input type="file" accept="image/*">
+                            <span>📷</span>
+                            <small>Photo 5</small>
+                        </div>
+                    </div>
+
+                    <p class="form-hint" style="margin-top: var(--space-sm);">Accepted: JPG, PNG — Must include company
+                        signboard</p>
+                </div>
+
+                <!-- Section 4: Immigration -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <div class="form-section-number">4</div>
+                        <div class="form-section-title">Immigration / Visa Support</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Does your company have an online immigration account? <span
+                                class="required">*</span></label>
+                        <div class="form-checks-row">
+                            <div class="form-check">
+                                <input type="radio" name="immigration" id="immYes" value="yes" required>
+                                <label for="immYes">Yes — We have an online immigration account</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="immigration" id="immNo" value="no">
+                                <label for="immNo">No — We need assistance</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5: Digital Signature -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <div class="form-section-number">5</div>
+                        <div class="form-section-title">Digital Signature Support</div>
+                    </div>
+
+                    <p style="color: var(--gray-500); margin-bottom: var(--space-lg); font-size: var(--font-size-sm);">
+                        For immigration entry documents, we may require technical support. Can your company support the
+                        following?
+                    </p>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="ultraviewer" value="ultraviewer">
+                        <label for="ultraviewer">UltraViewer remote access support</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="usbtoken" value="usbtoken">
+                        <label for="usbtoken">USB Token digital signature connection</label>
+                    </div>
+                </div>
+
+                <!-- Section 6: Contact Person -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <div class="form-section-number">6</div>
+                        <div class="form-section-title">Contact Person</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Contact Person Name <span class="required">*</span></label>
+                            <input type="text" class="form-input" placeholder="Full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Position <span class="required">*</span></label>
+                            <input type="text" class="form-input" placeholder="e.g. HR Director, CEO" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Phone Number <span class="required">*</span></label>
+                            <input type="tel" class="form-input" placeholder="+84 xxx xxx xxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email <span class="required">*</span></label>
+                            <input type="email" class="form-input" placeholder="person@company.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 7: Additional Notes -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <div class="form-section-number">7</div>
+                        <div class="form-section-title">Additional Notes</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Please provide any additional information about your company</label>
+                        <textarea class="form-textarea"
+                            placeholder="Industry focus, number of employees, types of workers needed, special requirements..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Section 8: Declaration -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <div class="form-section-number">8</div>
+                        <div class="form-section-title">Declaration</div>
+                    </div>
+
+                    <div class="form-check"
+                        style="border-color: var(--primary-light); background: rgba(14,116,144,0.02);">
+                        <input type="checkbox" id="agree" required>
+                        <label for="agree">I confirm that the information provided is accurate and that the documents
+                            submitted are valid.</label>
+                    </div>
+
+                    <div class="form-row" style="margin-top: var(--space-lg);">
+                        <div class="form-group">
+                            <label class="form-label">Your Name <span class="required">*</span></label>
+                            <input type="text" class="form-input" placeholder="Full legal name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Date <span class="required">*</span></label>
+                            <input type="date" class="form-input" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-accent btn-lg" style="padding: 1rem 3rem; font-size: 1.1rem;">
+                        Submit Application →
+                    </button>
+                    <p style="color: var(--gray-400); font-size: 0.8rem; margin-top: var(--space-md);">
+                        Our team will review your application within 3–5 business days.
+                    </p>
+                </div>
+            </form>
+
+            <!-- Success state -->
+            <div class="form-success" id="formSuccess">
+                <div class="form-success-icon">✅</div>
+                <h2>Application Submitted</h2>
+                <p>Thank you for registering as a Workforce Import Partner. Our team will review your application and
+                    contact you within 3–5 business days.</p>
+                <a href="index.html" class="btn btn-primary" style="margin-top: var(--space-xl);">Return to Home</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="background: var(--accent);">🌏</div>
+                        <span>Basao<span style="font-weight:400; opacity:0.5;">OS</span></span>
+                    </div>
+                    <p>The Global Workforce Mobility Platform — supporting workforce import partners with compliance and
+                        verification.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="index.html">Home</a>
+                    <a href="talent-import.html">Talent Import</a>
+                    <a href="tech-export.html">Tech Export</a>
+                    <a href="worker-health.html">Health</a>
+                    <a href="basao-finance.html">Basao Finance</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Partners</h4>
+                    <a href="partner-register.html">Register</a>
+                    <a href="index.html#partners">Our Partners</a>
+                    <a href="talent-import.html">Import Partners</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="index.html">About</a>
+                    <a href="index.html#technology">Technology</a>
+                    <a href="index.html#partners">Partners</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Basao Workforce OS. All Rights Reserved.</p>
+                <p class="footer-quote">"Prajna illuminates the mind — Wisdom guides the way."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Form submission handler
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('partnerForm').style.display = 'none';
+            document.getElementById('formSuccess').classList.add('active');
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
+
+        // File upload visual feedback
+        document.querySelectorAll('.file-upload input[type="file"], .photo-upload input[type="file"]').forEach(input => {
+            input.addEventListener('change', function () {
+                const parent = this.closest('.file-upload') || this.closest('.photo-upload');
+                if (this.files.length > 0) {
+                    parent.style.borderColor = '#059669';
+                    parent.style.background = 'rgba(5,150,105,0.05)';
+                    const textEl = parent.querySelector('.file-upload-text') || parent.querySelector('small');
+                    if (textEl) textEl.textContent = this.files[0].name;
+                    const iconEl = parent.querySelector('.file-upload-icon') || parent.querySelector('span');
+                    if (iconEl) iconEl.textContent = '✅';
+                }
+            });
+        });
+
+        // Auto-set today's date
+        const dateInput = document.querySelector('input[type="date"]');
+        if (dateInput) dateInput.valueAsDate = new Date();
+    </script>
+</body>
+
+</html>

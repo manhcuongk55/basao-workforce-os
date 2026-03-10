@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Basao Financial OS — The financial and real estate infrastructure powering the global workforce ecosystem. Investment, crowdfunding, AI valuation, and rental management.">
+    <title>Basao Financial OS — Workforce Financial Infrastructure</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌏</text></svg>">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header scrolled" id="header">
+        <div class="container">
+            <a href="index.html" class="header-logo" style="color: var(--gray-900);">
+                <div class="logo-icon">🌏</div>
+                <span>Basao<span style="font-weight:400; opacity:0.7;">OS</span></span>
+            </a>
+            <nav class="header-nav" id="headerNav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="talent-import.html">Talent Import</a></li>
+                    <li><a href="tech-export.html">Tech Export</a></li>
+                    <li><a href="worker-health.html">Health</a></li>
+                    <li><a href="basao-finance.html" style="color: var(--primary); font-weight: 700;">Basao Finance</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#cta" class="btn btn-outline"
+                        style="color: var(--primary); border-color: var(--primary);">Login</a>
+                    <a href="#cta" class="btn btn-accent">Start Investing</a>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero"
+        style="min-height: 90vh; background: linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #0e7490 70%, #059669 100%);">
+        <div class="hero-grid"></div>
+        <div class="hero-floating">
+            <div class="floating-badge">💰 Worker Savings → +$12K/yr</div>
+            <div class="floating-badge">🏠 Property Fund → 15% ROI</div>
+            <div class="floating-badge">🤖 AI Valuation → Live</div>
+            <div class="floating-badge">📊 Rental Revenue → Optimized</div>
+        </div>
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 850px; margin: 0 auto;">
+                <span class="section-badge"
+                    style="background: rgba(255,255,255,0.15); color: var(--accent-light);">Basao Financial OS</span>
+                <h1 style="font-size: var(--font-size-5xl);">The <span class="highlight">Financial Infrastructure</span>
+                    for the Global Workforce</h1>
+                <p style="margin: 0 auto var(--space-xl); max-width: 650px;">Basao is the financial and real estate
+                    layer connecting workers, investors, enterprises, and property assets — turning labor income into
+                    long-term wealth across the entire ecosystem.</p>
+
+                <div
+                    style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: var(--space-2xl);">
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.15);">Investment</span>
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.15);">Crowdfunding</span>
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.15);">AI
+                        Valuation</span>
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.15);">Housing</span>
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.15);">Rental
+                        Revenue</span>
+                </div>
+
+                <div class="hero-actions" style="justify-content: center;">
+                    <a href="#services" class="btn btn-accent btn-lg">Explore Services →</a>
+                    <a href="#cta" class="btn btn-outline btn-lg">For Investors</a>
+                </div>
+
+                <div class="hero-stats" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="3">0</div>
+                        <div class="stat-label">Ecosystem Layers</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Core Services</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="3">0</div>
+                        <div class="stat-label">Trillion-Dollar Markets</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 3-LAYER ARCHITECTURE ========== -->
+    <section class="section" id="architecture">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Architecture</span>
+                <h2>3-Layer Ecosystem Architecture</h2>
+                <p>Basao sits at the center of a powerful 3-layer system connecting workforce, real assets, and
+                    financial infrastructure.</p>
+            </div>
+
+            <div class="tech-layers stagger-children" style="max-width: 900px;">
+                <!-- Layer 1 -->
+                <div class="tech-layer"
+                    style="background: linear-gradient(135deg, rgba(14,116,144,0.04), rgba(6,182,212,0.06)); border: 1px solid rgba(14,116,144,0.1); border-radius: var(--radius-xl); padding: var(--space-xl);">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #0e7490, #06b6d4);">1
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Layer 1 — Workforce Platform</h3>
+                        <p>Global labor mobility connecting workers to jobs, training, health, and opportunities.</p>
+                        <div class="tech-tags" style="margin-top: var(--space-sm);">
+                            <span class="tech-tag">HelloJob — Jobs</span>
+                            <span class="tech-tag">SotaTek — Tech</span>
+                            <span class="tech-tag">DMC — Enterprise</span>
+                            <span class="tech-tag">Thiên Khôi — Real Estate</span>
+                            <span class="tech-tag">IKIGROUP — Health</span>
+                            <span class="tech-tag">Rentai / G-Home — Housing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 2 -->
+                <div class="tech-layer"
+                    style="background: linear-gradient(135deg, rgba(245,158,11,0.04), rgba(251,191,36,0.06)); border: 1px solid rgba(245,158,11,0.15); border-radius: var(--radius-xl); padding: var(--space-xl);">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #d97706, #fbbf24);">2
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Layer 2 — Asset Layer</h3>
+                        <p>Physical real estate assets generating value for the workforce economy.</p>
+                        <div class="tech-tags" style="margin-top: var(--space-sm);">
+                            <span class="tech-tag"
+                                style="background: rgba(245,158,11,0.1); color: var(--accent-dark);">Worker
+                                Housing</span>
+                            <span class="tech-tag"
+                                style="background: rgba(245,158,11,0.1); color: var(--accent-dark);">Mini
+                                Apartments</span>
+                            <span class="tech-tag"
+                                style="background: rgba(245,158,11,0.1); color: var(--accent-dark);">Hotels</span>
+                            <span class="tech-tag"
+                                style="background: rgba(245,158,11,0.1); color: var(--accent-dark);">Rental Rooms</span>
+                            <span class="tech-tag"
+                                style="background: rgba(245,158,11,0.1); color: var(--accent-dark);">Dormitories</span>
+                            <span class="tech-tag"
+                                style="background: rgba(245,158,11,0.1); color: var(--accent-dark);">Development
+                                Land</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 3 -->
+                <div class="tech-layer"
+                    style="background: linear-gradient(135deg, rgba(5,150,105,0.04), rgba(16,185,129,0.06)); border: 2px solid rgba(5,150,105,0.2); border-radius: var(--radius-xl); padding: var(--space-xl); box-shadow: 0 0 30px rgba(5,150,105,0.08);">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #059669, #10b981);">3
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Layer 3 — Financial Layer (Basao) ⭐</h3>
+                        <p><strong>Basao is the financial infrastructure bank of the entire ecosystem</strong> —
+                            providing valuation, investment, fundraising, savings, and asset management.</p>
+                        <div class="tech-tags" style="margin-top: var(--space-sm);">
+                            <span class="tech-tag"
+                                style="background: rgba(5,150,105,0.12); color: #059669;">Valuation</span>
+                            <span class="tech-tag"
+                                style="background: rgba(5,150,105,0.12); color: #059669;">Investment</span>
+                            <span class="tech-tag"
+                                style="background: rgba(5,150,105,0.12); color: #059669;">Fundraising</span>
+                            <span class="tech-tag"
+                                style="background: rgba(5,150,105,0.12); color: #059669;">Savings</span>
+                            <span class="tech-tag" style="background: rgba(5,150,105,0.12); color: #059669;">Asset
+                                Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BASAO ROLE ========== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Role</span>
+                <h2>Basao = Workforce Financial OS</h2>
+                <p>Basao serves as the financial engine for every participant in the ecosystem.</p>
+            </div>
+
+            <div class="flow-grid stagger-children" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="flow-card">
+                    <div class="flow-icon">👷</div>
+                    <h3>For Workers</h3>
+                    <p>Savings accounts, property investment, and structured wealth-building from labor income.</p>
+                    <span class="partner-tag">Savings → Assets</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">💰</div>
+                    <h3>For Investors</h3>
+                    <p>Property crowdfunding, REITs, and portfolio management in the worker economy.</p>
+                    <span class="partner-tag">Capital → Returns</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🏠</div>
+                    <h3>For Property Owners</h3>
+                    <p>AI valuation, rental optimization, multi-channel distribution, and revenue management.</p>
+                    <span class="partner-tag">Properties → Revenue</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🏢</div>
+                    <h3>For Enterprises</h3>
+                    <p>Workforce housing finance, project housing investment, and employee benefit programs.</p>
+                    <span class="partner-tag">Projects → Housing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 5 CORE SERVICES ========== -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">5 Core Services</span>
+                <h2>Basao Financial Services</h2>
+                <p>Five integrated financial services forming the backbone of the worker economy.</p>
+            </div>
+
+            <!-- Service 1: Worker Investment -->
+            <div class="ai-content reveal" style="margin-bottom: var(--space-4xl);">
+                <div class="ai-text">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div
+                            style="width: 48px; height: 48px; min-width: 48px; background: linear-gradient(135deg, #0e7490, #06b6d4); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.1rem;">
+                            1</div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--gray-900);">Worker
+                            Investment</h3>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Workers can
+                        convert their labor income into real estate assets — from savings to property ownership.</p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Structured savings accounts
+                        </div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Buy rental rooms & mini
+                            apartments</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Invest in hotel & hospitality
+                            assets</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Remote investing from Japan,
+                            Korea, EU</div>
+                    </div>
+                </div>
+                <div class="ai-visual">
+                    <div class="ai-diagram">
+                        <div class="ai-node">
+                            <div class="ai-node-icon worker">🇯🇵</div>
+                            <div class="ai-node-text">
+                                <h5>Worker in Japan via HelloJob</h5>
+                                <span>Earning ¥250,000/month</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon salary">💰</div>
+                            <div class="ai-node-text">
+                                <h5>Monthly Savings → Basao</h5>
+                                <span>¥50,000 auto-deposited</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon country">📈</div>
+                            <div class="ai-node-text">
+                                <h5>Invest in Vietnam Property</h5>
+                                <span>Rental room in Hanoi — 15% ROI</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #059669, #10b981);">
+                            <div class="match-icon">🏠</div>
+                            <div>
+                                <h5>Income → Savings → Property → Wealth</h5>
+                                <span>Long-term financial freedom</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2: Property Crowdfunding -->
+            <div class="ai-content reveal" style="margin-bottom: var(--space-4xl);">
+                <div class="ai-visual" style="order: -1;">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #fefce8, #fef9c3);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fef3c7, #fde68a);">👥
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Small Investors (VND 2–5B)</h5>
+                                <span>Join property investment pools</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">🏗️
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Fund Worker Housing Projects</h5>
+                                <span>Mini apartments, dormitories, hotels</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">💰
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Basao Manages Cash Flow</h5>
+                                <span>Fundraising, profit sharing, reporting</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+                            <div class="match-icon">📊</div>
+                            <div>
+                                <h5>Transparent Returns</h5>
+                                <span>Real-time dashboards • Monthly distributions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-text">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div
+                            style="width: 48px; height: 48px; min-width: 48px; background: linear-gradient(135deg, #d97706, #fbbf24); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.1rem;">
+                            2</div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--gray-900);">Property
+                            Crowdfunding</h3>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Small investors
+                        (VND 2–5 billion) can pool capital into worker housing, mini apartments, and hotel projects
+                        managed by Basao.</p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Pool capital into real assets
+                        </div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Fund worker housing & mini
+                            apartments</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Basao manages fundraise &
+                            distribution</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Transparent cash flow &
+                            profit sharing</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3: Workforce Housing Investment -->
+            <div class="ai-content reveal" style="margin-bottom: var(--space-4xl);">
+                <div class="ai-text">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div
+                            style="width: 48px; height: 48px; min-width: 48px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.1rem;">
+                            3</div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--gray-900);">Workforce
+                            Housing Investment</h3>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Basao finances
+                        worker housing near industrial zones and major project sites — partnering with DMC and
+                        Rentai/G-Home.</p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Worker housing near
+                            industrial zones</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Housing near major
+                            infrastructure projects</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Partnered with DMC & Rentai /
+                            G-Home</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Stable returns from workforce
+                            demand</div>
+                    </div>
+                </div>
+                <div class="ai-visual">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #f5f3ff, #ede9fe);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe);">🏭
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Industrial Zone Expansion</h5>
+                                <span>FDI factories need worker housing</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #f3e8ff, #ddd6fe);">💳
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Basao Finances Housing</h5>
+                                <span>Capital for construction & acquisition</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fce7f3, #fbcfe8);">🏠
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>DMC / Rentai Operates</h5>
+                                <span>Property management & tenant services</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">
+                            <div class="match-icon">🔄</div>
+                            <div>
+                                <h5>Enterprise → Housing → Workers</h5>
+                                <span>Self-sustaining workforce housing ecosystem</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4: AI Property Valuation -->
+            <div class="ai-content reveal" style="margin-bottom: var(--space-4xl);">
+                <div class="ai-visual" style="order: -1;">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">📊
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Transaction Data</h5>
+                                <span>Historical sale prices & trends</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">🏷️
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Rental Prices</h5>
+                                <span>Market rent analytics by zone</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fef3c7, #fde68a);">📈
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Occupancy Rates</h5>
+                                <span>Real-time vacancy & demand data</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #0e7490, #06b6d4);">
+                            <div class="match-icon">🤖</div>
+                            <div>
+                                <h5>AI Valuation: VND 8.2B (±3%)</h5>
+                                <span>Core technology • Data-driven • Transparent</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-text">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div
+                            style="width: 48px; height: 48px; min-width: 48px; background: linear-gradient(135deg, #0e7490, #06b6d4); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.1rem;">
+                            4</div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--gray-900);">AI
+                            Property Valuation</h3>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Basao's
+                        <strong>core technology</strong> — AI-powered property valuation combining transaction data,
+                        rental prices, sale prices, and occupancy rates for accurate, transparent valuations.</p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Machine learning valuation
+                            models</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Real-time market data
+                            integration</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Transaction + rental +
+                            occupancy analytics</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Core technology powering all
+                            services</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 5: Rental Revenue Platform -->
+            <div class="ai-content reveal">
+                <div class="ai-text">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div
+                            style="width: 48px; height: 48px; min-width: 48px; background: linear-gradient(135deg, #dc2626, #f87171); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.1rem;">
+                            5</div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--gray-900);">Rental
+                            Revenue Platform</h3>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Basao helps
+                        property owners distribute rooms across multiple channels — Booking.com, Airbnb, and the
+                        workforce platform — while managing pricing, occupancy, and cash flow.</p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Multi-channel distribution
+                            (Booking, Airbnb)</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Worker platform direct
+                            bookings</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> AI pricing & occupancy
+                            optimization</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Cash flow management &
+                            reporting</div>
+                    </div>
+                </div>
+                <div class="ai-visual">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #fef2f2, #fee2e2);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fecaca, #fca5a5);">🏠
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Property Portfolio</h5>
+                                <span>Rooms, apartments, hotels</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">🌐
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Multi-Channel Distribution</h5>
+                                <span>Booking.com • Airbnb • Worker Platform</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">💰
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Revenue Optimization</h5>
+                                <span>AI pricing • Occupancy max • Cash flow</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #dc2626, #ef4444);">
+                            <div class="match-icon">📊</div>
+                            <div>
+                                <h5>Occupancy: 94% • Revenue: +35%</h5>
+                                <span>Optimized across all channels</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CASH FLOW ========== -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge" style="background: rgba(6,182,212,0.15);">Cash Flow</span>
+                <h2>Ecosystem Money Flow</h2>
+                <p>Basao sits at the center of all financial flows in the worker economy.</p>
+            </div>
+            <div class="tech-layers stagger-children" style="max-width: 900px;">
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #0e7490, #06b6d4);">👷
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Workers: Work → Savings → Investment</h3>
+                        <p>Workers deposit earnings into Basao savings accounts, then invest into verified property
+                            assets for long-term wealth.</p>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #d97706, #fbbf24);">💰
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Investors: Capital → Property → Rental Income</h3>
+                        <p>Investors fund property projects through crowdfunding, earning monthly rental distributions
+                            managed by Basao.</p>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">🏢
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Enterprises: Projects → Housing → Workers</h3>
+                        <p>Companies fund workforce housing through Basao to support large-scale infrastructure and
+                            industrial projects.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-2xl);">
+                <div class="reveal"
+                    style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-xl); padding: var(--space-lg) var(--space-2xl); color: var(--accent-light); font-weight: 700; font-size: var(--font-size-lg);">
+                    ⭐ Basao stands at the center of ALL cash flows
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== REVENUE MODEL ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Revenue</span>
+                <h2>Basao Revenue Model</h2>
+                <p>Five sustainable revenue streams from financial services across the ecosystem.</p>
+            </div>
+            <div class="flow-grid stagger-children" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="flow-card">
+                    <div class="flow-icon">💳</div>
+                    <h3>Investment Fee</h3>
+                    <p
+                        style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+                        1–2%</p>
+                    <p>Per investment transaction</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🏠</div>
+                    <h3>Property Mgmt</h3>
+                    <p
+                        style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+                        5–10%</p>
+                    <p>Of rental revenue managed</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🤖</div>
+                    <h3>AI Valuation</h3>
+                    <p
+                        style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+                        SaaS</p>
+                    <p>Subscription model</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">💰</div>
+                    <h3>Financial Svc</h3>
+                    <p
+                        style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+                        0.5–1%</p>
+                    <p>Savings & transfer fees</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🌐</div>
+                    <h3>Distribution</h3>
+                    <p
+                        style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+                        3–8%</p>
+                    <p>Booking channel fees</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STRATEGIC VISION ========== -->
+    <section class="section stats-section" style="background: linear-gradient(135deg, #0f172a, #1e293b);">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom: 2rem;">
+                <h2 style="color: #fff;">3 Trillion-Dollar Markets, 1 Platform</h2>
+                <p style="color: rgba(255,255,255,0.7);">Basao connects three massive global markets into a unified
+                    worker economy platform.</p>
+            </div>
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 800px; margin: 0 auto;">
+                <div class="stat-card">
+                    <div class="stat-icon">👷</div>
+                    <div class="stat-value" style="font-size: var(--font-size-3xl);">Labor<br>Mobility</div>
+                    <div class="stat-label">$500B+ market</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏠</div>
+                    <div class="stat-value" style="font-size: var(--font-size-3xl);">Housing<br>& Property</div>
+                    <div class="stat-label">$300T+ global</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-value" style="font-size: var(--font-size-3xl);">Financial<br>Assets</div>
+                    <div class="stat-label">$100T+ market</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VISION ========== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal" style="max-width: 800px;">
+                <span class="section-badge">Vision</span>
+                <h2>Global Workforce Financial Infrastructure</h2>
+                <p style="margin-bottom: 1.5rem;">Basao is becoming the financial backbone of the worker economy — like
+                    <strong>BlackRock + Airbnb + Zillow</strong>, but purpose-built for the global workforce.</p>
+                <div
+                    style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <span class="tech-tag" style="font-size: 0.9rem; padding: 0.5rem 1.25rem;">BlackRock — Asset
+                        Management</span>
+                    <span class="tech-tag" style="font-size: 0.9rem; padding: 0.5rem 1.25rem;">+ Airbnb — Property
+                        Distribution</span>
+                    <span class="tech-tag" style="font-size: 0.9rem; padding: 0.5rem 1.25rem;">+ Zillow — AI
+                        Valuation</span>
+                </div>
+                <p style="font-style: italic; color: var(--gray-400); font-size: 0.95rem;">"Prajna illuminates the mind
+                    — Wisdom guides the way."<br>Technology must not only create jobs — it must help workers build
+                    <strong>sustainable wealth and lasting assets</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="section cta-section" id="cta">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2>Join the Worker Economy Platform</h2>
+                <p>Whether you're a worker building savings, an investor seeking returns, or an enterprise needing
+                    workforce housing — Basao Financial OS connects it all.</p>
+                <div class="cta-actions">
+                    <a href="#" class="btn btn-accent btn-lg">Start Investing →</a>
+                    <a href="#" class="btn btn-outline btn-lg">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="background: var(--accent);">🌏</div>
+                        <span>Basao<span style="font-weight:400; opacity:0.5;">OS</span></span>
+                    </div>
+                    <p>The financial and real estate infrastructure powering the global workforce ecosystem —
+                        investment, valuation, and asset management for workers, investors, and enterprises.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+                        <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="footer-social" aria-label="GitHub">◐</a>
+                        <a href="#" class="footer-social" aria-label="Email">✉</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="index.html">Home</a>
+                    <a href="talent-import.html">Talent Import</a>
+                    <a href="tech-export.html">Tech Export</a>
+                    <a href="worker-health.html">Health & Lifestyle</a>
+                    <a href="basao-finance.html">Basao Finance</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Financial Services</h4>
+                    <a href="#services">Worker Investment</a>
+                    <a href="#services">Property Crowdfunding</a>
+                    <a href="#services">Housing Investment</a>
+                    <a href="#services">AI Valuation</a>
+                    <a href="#services">Rental Revenue</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="index.html">About</a>
+                    <a href="index.html#technology">Technology</a>
+                    <a href="index.html#partners">Partners</a>
+                    <a href="#cta">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Basao Workforce OS. All Rights Reserved.</p>
+                <p class="footer-quote">"Bát Nhã soi tâm — Trí tuệ dẫn đường"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
