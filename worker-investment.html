@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Worker Investment & Property — AI-powered real estate and financial solutions helping workers build long-term wealth through smart property investment.">
+    <title>Worker Investment & Property — Basao Workforce OS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌏</text></svg>">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header scrolled" id="header">
+        <div class="container">
+            <a href="index.html" class="header-logo" style="color: var(--gray-900);">
+                <div class="logo-icon">🌏</div>
+                <span>Basao<span style="font-weight:400; opacity:0.7;">OS</span></span>
+            </a>
+            <nav class="header-nav" id="headerNav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="talent-import.html">Talent Import</a></li>
+                    <li><a href="tech-export.html">Tech Export</a></li>
+                    <li><a href="worker-investment.html" style="color: var(--primary); font-weight: 700;">Investment</a>
+                    </li>
+                    <li><a href="index.html#partners">Partners</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#cta" class="btn btn-outline"
+                        style="color: var(--primary); border-color: var(--primary);">Login</a>
+                    <a href="#cta" class="btn btn-accent">Start Investing</a>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero"
+        style="min-height: 85vh; background: linear-gradient(135deg, #1a2744 0%, #0e7490 50%, #059669 100%);">
+        <div class="hero-grid"></div>
+        <div class="hero-floating">
+            <div class="floating-badge">🏠 Apartment Investment → Hanoi</div>
+            <div class="floating-badge">💰 Savings Plan → Active</div>
+            <div class="floating-badge">📈 Property Value → +18%</div>
+            <div class="floating-badge">🇯🇵 Worker in Tokyo → Investing</div>
+        </div>
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 820px; margin: 0 auto;">
+                <span class="section-badge"
+                    style="background: rgba(255,255,255,0.15); color: var(--accent-light);">Worker Investment &
+                    Property</span>
+                <h1 style="font-size: var(--font-size-5xl);">Build Your Future Through <span class="highlight">Smart
+                        Investment</span></h1>
+                <p style="margin: 0 auto var(--space-2xl); max-width: 620px;">Whether working in Vietnam or abroad — our
+                    AI-powered platform helps you save, invest, and build long-term wealth through real estate and
+                    financial planning.</p>
+                <div class="hero-actions" style="justify-content: center;">
+                    <a href="#cta" class="btn btn-accent btn-lg">Start Investing →</a>
+                    <a href="#how-it-works" class="btn btn-outline btn-lg">Explore Opportunities</a>
+                </div>
+                <div class="hero-stats" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="15" data-suffix="%+">0</div>
+                        <div class="stat-label">Avg. Property Returns</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="500" data-suffix="K+">0</div>
+                        <div class="stat-label">Workers Overseas</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="18" data-suffix="B">$0</div>
+                        <div class="stat-label">Remittances / Year</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== THE CHALLENGE ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="ai-content">
+                <div class="ai-text reveal-left">
+                    <span class="section-badge">The Challenge</span>
+                    <h2>Workers Need <span class="highlight">Financial Security</span></h2>
+                    <p>Millions of workers earn income at home and abroad but lack structured ways to build long-term
+                        wealth and financial stability.</p>
+                    <div class="ai-features">
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">💸</div>
+                            <div>
+                                <h4>Difficulty Saving</h4>
+                                <p>Without structured tools, workers struggle to save consistently from their income.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">🔒</div>
+                            <div>
+                                <h4>Limited Safe Investments</h4>
+                                <p>Most workers lack access to verified, transparent investment opportunities.</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">📊</div>
+                            <div>
+                                <h4>No Financial Planning</h4>
+                                <p>Workers rarely receive professional financial guidance or planning tools.</p>
+                            </div>
+                        </div>
+                        <div class="ai-feature">
+                            <div class="ai-feature-icon">🏠</div>
+                            <div>
+                                <h4>Housing Uncertainty</h4>
+                                <p>Workers returning from abroad face difficulty securing quality housing and property.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-visual reveal-right">
+                    <div class="ai-diagram">
+                        <div class="ai-node">
+                            <div class="ai-node-icon worker">💼</div>
+                            <div class="ai-node-text">
+                                <h5>Worker Income</h5>
+                                <span>Domestic & international earnings</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fee2e2, #fecaca);">❌
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>No Investment Structure</h5>
+                                <span>Income spent without growth strategy</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fef3c7, #fde68a);">⚠️
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Risky Informal Savings</h5>
+                                <span>Cash, gold, unverified schemes</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #059669, #10b981);">
+                            <div class="match-icon">✨</div>
+                            <div>
+                                <h5>Basao Solution</h5>
+                                <span>AI-powered property investment & savings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== OUR SOLUTION ========== -->
+    <section class="section section-alt" id="solution">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Our Solution</span>
+                <h2>AI-Powered Property & Financial Services</h2>
+                <p>Powered by <strong>Basao AI</strong>, we help workers convert labor income into long-term assets
+                    through smart, transparent investment.</p>
+            </div>
+            <div class="flow-grid stagger-children" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="flow-card">
+                    <div class="flow-icon">🏠</div>
+                    <h3>Property Investment</h3>
+                    <p>Verified real estate opportunities with AI-powered valuation and growth projections.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">💰</div>
+                    <h3>Property Savings Plans</h3>
+                    <p>Structured savings programs that build toward property ownership over time.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🏡</div>
+                    <h3>Returning Worker Housing</h3>
+                    <p>Housing solutions for workers coming back to Vietnam after working abroad.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">📈</div>
+                    <h3>Financial Planning</h3>
+                    <p>AI-driven financial advice, budgeting tools, and investment strategies.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🤖</div>
+                    <h3>AI Property Valuation</h3>
+                    <p>Data-driven property analysis ensuring transparent and informed decisions.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🔐</div>
+                    <h3>Secure Transactions</h3>
+                    <p>Blockchain-verified property records and secure digital investment processes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Process</span>
+                <h2>How It Works</h2>
+                <p>From financial profile to property ownership — a clear, guided path to building wealth.</p>
+            </div>
+            <div class="flow-grid stagger-children" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="flow-card">
+                    <span class="step-number">1</span>
+                    <div class="flow-icon">👤</div>
+                    <h3>Financial Profile</h3>
+                    <p>Workers create a profile with income, savings capacity, and investment goals.</p>
+                </div>
+                <div class="flow-card">
+                    <span class="step-number">2</span>
+                    <div class="flow-icon">🤖</div>
+                    <h3>AI Analysis</h3>
+                    <p>AI analyzes income patterns and recommends optimal investment strategies.</p>
+                </div>
+                <div class="flow-card">
+                    <span class="step-number">3</span>
+                    <div class="flow-icon">🏠</div>
+                    <h3>Property Matching</h3>
+                    <p>AI recommends suitable properties, savings plans, and financial strategies.</p>
+                </div>
+                <div class="flow-card">
+                    <span class="step-number">4</span>
+                    <div class="flow-icon">📈</div>
+                    <h3>Gradual Investment</h3>
+                    <p>Workers invest progressively through structured property investment programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WORKERS ABROAD ========== -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge" style="background: rgba(6,182,212,0.15);">International Workers</span>
+                <h2>Invest From Anywhere in the World</h2>
+                <p>Workers in Japan, Korea, Europe, and Singapore can invest in Vietnamese real estate remotely.</p>
+            </div>
+            <div class="tech-layers stagger-children">
+                <div class="tech-layer">
+                    <div class="tech-layer-number">🇯🇵</div>
+                    <div class="tech-layer-content">
+                        <h3>Workers in Japan</h3>
+                        <p>Remote property investment in Vietnam while earning in Japan. Secure, verified opportunities.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Remote Investment</span>
+                            <span class="tech-tag">JPY → VND</span>
+                            <span class="tech-tag">Verified Property</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number">🇰🇷</div>
+                    <div class="tech-layer-content">
+                        <h3>Workers in Korea</h3>
+                        <p>Structured savings plans that convert Korean earnings into Vietnamese real estate assets.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Savings Plans</span>
+                            <span class="tech-tag">KRW → VND</span>
+                            <span class="tech-tag">Housing Return</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number">🇪🇺</div>
+                    <div class="tech-layer-content">
+                        <h3>Workers in Europe</h3>
+                        <p>Access premium property investments in Vietnam's growing cities from anywhere in Europe.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Premium Property</span>
+                            <span class="tech-tag">EUR → VND</span>
+                            <span class="tech-tag">Growth Markets</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number">🇸🇬</div>
+                    <div class="tech-layer-content">
+                        <h3>Workers in Singapore</h3>
+                        <p>Leverage Singapore earnings for high-growth Vietnamese property investments.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">High Growth</span>
+                            <span class="tech-tag">SGD → VND</span>
+                            <span class="tech-tag">Urban Property</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DOMESTIC WORKERS ========== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="passport-content">
+                <div class="passport-text reveal-left">
+                    <span class="section-badge">Domestic Workers</span>
+                    <h2>Financial Solutions for <span class="highlight">Workers in Vietnam</span></h2>
+                    <p>For workers within Vietnam, the platform provides accessible pathways to property ownership and
+                        financial security.</p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Affordable housing
+                            opportunities in growing cities</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Property investment guidance
+                            from AI advisors</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Financial literacy and
+                            planning tools</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Micro-investment options
+                            starting small</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Community housing programs
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="#cta" class="btn btn-primary btn-lg">Explore Housing →</a>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <div class="ai-diagram">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">💼
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Monthly Income</h5>
+                                <span>Structured allocation plan</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">💰
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Savings Account</h5>
+                                <span>Automatic savings deduction</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fef3c7, #fde68a);">📈
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Investment Growth</h5>
+                                <span>AI-optimized portfolio growth</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #059669, #10b981);">
+                            <div class="match-icon">🏠</div>
+                            <div>
+                                <h5>Property Ownership</h5>
+                                <span>Income → Savings → Investment → Home</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TECHNOLOGY ========== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Technology</span>
+                <h2>Powered by Basao AI</h2>
+                <p>Transparent, data-driven investment decisions powered by advanced AI and real estate analytics.</p>
+            </div>
+            <div class="flow-grid stagger-children" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="flow-card">
+                    <div class="flow-icon">🤖</div>
+                    <h3>AI Valuation</h3>
+                    <p>Machine learning models that accurately predict property values and growth potential.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">📊</div>
+                    <h3>Data Analytics</h3>
+                    <p>Real estate market intelligence from comprehensive data across Vietnam's cities.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">👤</div>
+                    <h3>Digital Profiles</h3>
+                    <p>Secure financial profiles with income tracking, savings history, and goal monitoring.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">💡</div>
+                    <h3>Smart Recommendations</h3>
+                    <p>Personalized investment advice based on worker income, goals, and risk tolerance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BENEFITS ========== -->
+    <section class="section stats-section" style="background: linear-gradient(135deg, #059669 0%, #0e7490 100%);">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom: 2rem;">
+                <h2 style="color: #fff;">Worker Benefits</h2>
+                <p style="color: rgba(255,255,255,0.7);">Transforming labor income into sustainable wealth and financial
+                    security.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🏠</div>
+                    <div class="stat-value" style="font-size: var(--font-size-3xl);">Property<br>Access</div>
+                    <div class="stat-label">Real estate investment</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-value" style="font-size: var(--font-size-3xl);">Long-Term<br>Wealth</div>
+                    <div class="stat-label">Sustainable growth</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👨‍👩‍👧‍👦</div>
+                    <div class="stat-value" style="font-size: var(--font-size-3xl);">Family<br>Security</div>
+                    <div class="stat-label">Protect your loved ones</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-value" style="font-size: var(--font-size-3xl);">Structured<br>Savings</div>
+                    <div class="stat-label">Disciplined programs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VISION ========== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal" style="max-width: 800px;">
+                <span class="section-badge">Vision</span>
+                <h2>Building a Worker Wealth Ecosystem</h2>
+                <p style="margin-bottom: 1.5rem;">Our goal is to create a complete financial ecosystem where labor
+                    income is transformed into sustainable wealth — supporting financial inclusion, property ownership,
+                    and economic stability for every worker.</p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <span class="tech-tag" style="font-size: 0.9rem; padding: 0.5rem 1.25rem;">Income → Savings</span>
+                    <span class="tech-tag" style="font-size: 0.9rem; padding: 0.5rem 1.25rem;">→ Investment</span>
+                    <span class="tech-tag" style="font-size: 0.9rem; padding: 0.5rem 1.25rem;">→ Property</span>
+                    <span class="tech-tag" style="font-size: 0.9rem; padding: 0.5rem 1.25rem;">→ Wealth</span>
+                </div>
+                <p style="font-style: italic; color: var(--gray-400); font-size: 0.95rem;">"Technology must not only
+                    create jobs — it must help workers build sustainable lives and lasting assets."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="section cta-section" id="cta">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2>Start Building Your Future Today</h2>
+                <p>Join thousands of workers building long-term wealth through smart property investment. Whether you're
+                    in Vietnam or abroad, our AI-powered platform guides you every step of the way.</p>
+                <div class="cta-actions">
+                    <a href="#" class="btn btn-accent btn-lg">Start Investing →</a>
+                    <a href="#" class="btn btn-outline btn-lg">Explore Properties</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="background: var(--accent);">🌏</div>
+                        <span>Basao<span style="font-weight:400; opacity:0.5;">OS</span></span>
+                    </div>
+                    <p>Helping workers build sustainable wealth through smart property investment and AI-driven
+                        financial planning.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+                        <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="footer-social" aria-label="GitHub">◐</a>
+                        <a href="#" class="footer-social" aria-label="Email">✉</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="index.html">Home</a>
+                    <a href="talent-import.html">Talent Import</a>
+                    <a href="tech-export.html">Tech Export</a>
+                    <a href="worker-investment.html">Investment</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="#solution">Property Investment</a>
+                    <a href="#how-it-works">Savings Plans</a>
+                    <a href="#how-it-works">Financial Planning</a>
+                    <a href="#cta">Get Started</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="index.html">About</a>
+                    <a href="index.html#technology">Technology</a>
+                    <a href="index.html#partners">Partners</a>
+                    <a href="#cta">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Basao Workforce OS. All Rights Reserved.</p>
+                <p class="footer-quote">"Prajna illuminates the mind — Wisdom guides the way."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
