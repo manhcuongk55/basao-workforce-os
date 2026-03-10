@@ -24,15 +24,26 @@
             <nav class="header-nav" id="headerNav">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="talent-import.html">Talent Import</a></li>
-                    <li><a href="tech-export.html">Tech Export</a></li>
-                    <li><a href="worker-health.html">Health</a></li>
-                    <li><a href="basao-finance.html" style="color: var(--primary); font-weight: 700;">Basao Finance</a>
+                    <li class="nav-dropdown">
+                        <a href="#">Workforce</a>
+                        <div class="dropdown-menu">
+                            <a href="talent-import.html"><span class="dropdown-icon">🌍</span> Human Workforce Hub</a>
+                            <a href="tech-export.html"><span class="dropdown-icon">💻</span> Tech Talent Export</a>
+                            <a href="worker-training.html"><span class="dropdown-icon">🎓</span> Skills & Training</a>
+                        </div>
                     </li>
+                    <li class="nav-dropdown">
+                        <a href="#" style="color: var(--primary); font-weight: 700;">Services</a>
+                        <div class="dropdown-menu">
+                            <a href="worker-health.html"><span class="dropdown-icon">💪</span> Health & Lifestyle</a>
+                            <a href="basao-finance.html"><span class="dropdown-icon">💰</span> Basao Finance</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#partners">Partners</a></li>
                 </ul>
                 <div class="nav-actions">
-                    <a href="#cta" class="btn btn-outline"
-                        style="color: var(--primary); border-color: var(--primary);">Login</a>
+                    <a href="partner-register.html" class="btn btn-outline"
+                        style="color: var(--primary); border-color: var(--primary);">Register</a>
                     <a href="#cta" class="btn btn-accent">Start Investing</a>
                 </div>
             </nav>
@@ -76,6 +87,10 @@
                     <span class="tech-tag"
                         style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.15);">Rental
                         Revenue</span>
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(245,158,11,0.25); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3);">🔥
+                        Worker
+                        Wallet</span>
                 </div>
 
                 <div class="hero-actions" style="justify-content: center;">
@@ -126,6 +141,7 @@
                             <span class="tech-tag">DMC — Enterprise</span>
                             <span class="tech-tag">Thiên Khôi — Real Estate</span>
                             <span class="tech-tag">IKIGROUP — Health</span>
+                            <span class="tech-tag">Rison — Training</span>
                             <span class="tech-tag">Rentai / G-Home — Housing</span>
                         </div>
                     </div>
@@ -463,7 +479,8 @@
                     </div>
                     <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Basao's
                         <strong>core technology</strong> — AI-powered property valuation combining transaction data,
-                        rental prices, sale prices, and occupancy rates for accurate, transparent valuations.</p>
+                        rental prices, sale prices, and occupancy rates for accurate, transparent valuations.
+                    </p>
                     <div class="passport-benefits">
                         <div class="passport-benefit"><span class="benefit-check">✓</span> Machine learning valuation
                             models</div>
@@ -675,7 +692,8 @@
                 <span class="section-badge">Vision</span>
                 <h2>Global Workforce Financial Infrastructure</h2>
                 <p style="margin-bottom: 1.5rem;">Basao is becoming the financial backbone of the worker economy — like
-                    <strong>BlackRock + Airbnb + Zillow</strong>, but purpose-built for the global workforce.</p>
+                    <strong>BlackRock + Airbnb + Zillow</strong>, but purpose-built for the global workforce.
+                </p>
                 <div
                     style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem;">
                     <span class="tech-tag" style="font-size: 0.9rem; padding: 0.5rem 1.25rem;">BlackRock — Asset
@@ -687,7 +705,114 @@
                 </div>
                 <p style="font-style: italic; color: var(--gray-400); font-size: 0.95rem;">"Prajna illuminates the mind
                     — Wisdom guides the way."<br>Technology must not only create jobs — it must help workers build
-                    <strong>sustainable wealth and lasting assets</strong>.</p>
+                    <strong>sustainable wealth and lasting assets</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WORKER WALLET (MyPay-inspired) ========== -->
+    <section class="section" id="wallet">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge"
+                    style="background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(251,191,36,0.1)); color: var(--accent-dark);">New
+                    Service</span>
+                <h2>Basao Worker Wallet</h2>
+                <p>A mobile wallet powering payroll, remittance, savings, and property investment — inspired by MyPay
+                    and M-Pesa models for financial inclusion.</p>
+            </div>
+
+            <div class="flow-grid stagger-children" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="flow-card">
+                    <div class="flow-icon">💳</div>
+                    <h3>Salary Wallet</h3>
+                    <p>Receive salary directly into your digital wallet — no bank required.</p>
+                    <span class="partner-tag">Payroll</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🌍</div>
+                    <h3>Remittance</h3>
+                    <p>Send money home instantly from Japan, Korea, EU — low fees, real-time.</p>
+                    <span class="partner-tag">Cross-border</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🏢</div>
+                    <h3>Bulk Payroll</h3>
+                    <p>Companies pay thousands of workers in one click via Basao payroll API.</p>
+                    <span class="partner-tag">Enterprise</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🐷</div>
+                    <h3>Savings Plan</h3>
+                    <p>Auto-save from each paycheck into structured savings for future goals.</p>
+                    <span class="partner-tag">Wealth</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🏠</div>
+                    <h3>Property Fund</h3>
+                    <p>Invest savings directly into rental rooms, apartments, and housing assets.</p>
+                    <span class="partner-tag">Investment</span>
+                </div>
+            </div>
+
+            <!-- Wallet Flow Diagram -->
+            <div class="ai-content reveal" style="margin-top: var(--space-3xl);">
+                <div class="ai-text">
+                    <h3
+                        style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--gray-900); margin-bottom: var(--space-lg);">
+                        Worker → Wallet → Wealth</h3>
+                    <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Inspired by
+                        MyPay Zambia and M-Pesa, the Basao Worker Wallet provides financial inclusion for workers who
+                        may not have traditional bank accounts — turning labor income into long-term assets.</p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Works on any phone —
+                            smartphone or feature phone</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> No bank account required —
+                            wallet tied to phone number</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> International remittance at
+                            70% lower fees</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Auto-investment from salary
+                            into property fund</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Agent network for cash-in /
+                            cash-out</div>
+                    </div>
+                </div>
+                <div class="ai-visual">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #fffbeb, #fef3c7);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fde68a, #fcd34d);">👷
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Worker Abroad</h5>
+                                <span>Japan, Korea, EU, Singapore</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">💸
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Send Money → Wallet</h5>
+                                <span>Instant, low-fee remittance</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">🐷
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Auto-Save & Invest</h5>
+                                <span>Savings plan → Property fund</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+                            <div class="match-icon">🏠</div>
+                            <div>
+                                <h5>Income → Savings → Property → Wealth</h5>
+                                <span>Financial freedom through smart investing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -700,8 +825,8 @@
                 <p>Whether you're a worker building savings, an investor seeking returns, or an enterprise needing
                     workforce housing — Basao Financial OS connects it all.</p>
                 <div class="cta-actions">
-                    <a href="#" class="btn btn-accent btn-lg">Start Investing →</a>
-                    <a href="#" class="btn btn-outline btn-lg">Partner With Us</a>
+                    <a href="partner-register.html" class="btn btn-accent btn-lg">Start Investing →</a>
+                    <a href="partner-register.html" class="btn btn-outline btn-lg">Partner With Us</a>
                 </div>
             </div>
         </div>

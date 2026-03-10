@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Worker Skills & Training — Professional development programs in AI tools, digital sales, livestream commerce, and global work skills powered by Rison.">
+    <title>Worker Skills & Training — Basao Workforce OS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌏</text></svg>">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header scrolled" id="header">
+        <div class="container">
+            <a href="index.html" class="header-logo" style="color: var(--gray-900);">
+                <div class="logo-icon">🌏</div>
+                <span>Basao<span style="font-weight:400; opacity:0.7;">OS</span></span>
+            </a>
+            <nav class="header-nav" id="headerNav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#">Workforce</a>
+                        <div class="dropdown-menu">
+                            <a href="talent-import.html"><span class="dropdown-icon">🌍</span> Human Workforce Hub</a>
+                            <a href="tech-export.html"><span class="dropdown-icon">💻</span> Tech Talent Export</a>
+                            <a href="worker-training.html"><span class="dropdown-icon">🎓</span> Skills & Training</a>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#">Services</a>
+                        <div class="dropdown-menu">
+                            <a href="worker-health.html"><span class="dropdown-icon">💪</span> Health & Lifestyle</a>
+                            <a href="basao-finance.html"><span class="dropdown-icon">💰</span> Basao Finance</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#partners">Partners</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="partner-register.html" class="btn btn-outline"
+                        style="color: var(--primary); border-color: var(--primary);">Register</a>
+                    <a href="partner-register.html" class="btn btn-accent">Get Started</a>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero"
+        style="min-height: 90vh; background: linear-gradient(135deg, #0f172a 0%, #4c1d95 40%, #7c3aed 70%, #a78bfa 100%);">
+        <div class="hero-grid"></div>
+        <div class="hero-floating">
+            <div class="floating-badge">🎓 AI Skills → +40% Income</div>
+            <div class="floating-badge">📱 Livestream → Revenue</div>
+            <div class="floating-badge">🌍 Global Skills → Career</div>
+            <div class="floating-badge">💼 Certified → Job Ready</div>
+        </div>
+        <div class="container">
+            <div class="hero-content" style="max-width: 600px;">
+                <span class="section-badge"
+                    style="background: rgba(255,255,255,0.12); color: var(--accent-light);">Worker Skills &
+                    Training</span>
+                <h1 style="font-size: var(--font-size-5xl);">Upgrade Your Skills, <span class="highlight">Upgrade Your
+                        Life</span></h1>
+                <p>Professional training programs in AI tools, digital sales, livestream commerce, and global work
+                    skills — powered by Rison.</p>
+                <div class="hero-actions">
+                    <a href="#programs" class="btn btn-accent btn-lg">Explore Programs →</a>
+                    <a href="#register" class="btn btn-outline btn-lg">Register for Courses</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="4">0</div>
+                        <div class="stat-label">Training Tracks</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="40" data-suffix="%">0</div>
+                        <div class="stat-label">Avg Income Increase</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="100" data-suffix="+">0</div>
+                        <div class="stat-label">Certified Graduates</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-search-card">
+                <div class="search-card-title">Start Your <span>Learning Journey</span></div>
+                <div class="search-fields">
+                    <div class="search-field">
+                        <label>Training Track</label>
+                        <select>
+                            <option>All Programs</option>
+                            <option>AI Skills for Workers</option>
+                            <option>Digital Sales & Commerce</option>
+                            <option>Global Work Skills</option>
+                            <option>Entrepreneur Skills</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <label>Level</label>
+                        <select>
+                            <option>All Levels</option>
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-accent btn-lg search-btn">🎯 Find Courses</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SKILL DEVELOPMENT JOURNEY ========== -->
+    <section class="section" id="journey">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Journey</span>
+                <h2>Skills → Jobs → Success</h2>
+                <p>Rison enhances worker capabilities before job placement, increasing productivity and income across
+                    the ecosystem.</p>
+            </div>
+
+            <div class="tech-layers stagger-children" style="max-width: 750px;">
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">1
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Worker registers on the platform</h3>
+                        <p>Create profile, select skills of interest, and choose a learning path.</p>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">2
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Training with Rison</h3>
+                        <p>Complete structured courses in AI, digital commerce, or global readiness.</p>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">3
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Earn certification</h3>
+                        <p>Receive a verified digital certificate added to your Talent Passport.</p>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">4
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>AI job matching → higher salary</h3>
+                        <p>Enhanced profile matches with better jobs and higher-paying international opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 4 TRAINING PROGRAMS ========== -->
+    <section class="section section-alt" id="programs">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Programs</span>
+                <h2>4 Core Training Tracks</h2>
+                <p>Comprehensive programs designed for workers at every level — from factory floor to global enterprise.
+                </p>
+            </div>
+
+            <!-- Program 1 -->
+            <div class="ai-content reveal" style="margin-bottom: var(--space-4xl);">
+                <div class="ai-text">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div
+                            style="width: 48px; height: 48px; min-width: 48px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.1rem;">
+                            1</div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--gray-900);">AI Skills
+                            for Workers</h3>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Learn to
+                        leverage AI tools in daily work — from automating repetitive tasks to using AI productivity
+                        platforms.</p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> AI productivity tools
+                            (ChatGPT, Copilot, Gemini)</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Workflow automation with AI
+                        </div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> AI-assisted data analysis &
+                            reporting</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Practical certification
+                            included</div>
+                    </div>
+                </div>
+                <div class="ai-visual">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #f5f3ff, #ede9fe);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe);">🤖
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Learn AI Tools</h5>
+                                <span>ChatGPT, Gemini, automation</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #f3e8ff, #ddd6fe);">⚡
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Automate Your Work</h5>
+                                <span>50% faster task completion</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">📊
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Data & Analytics</h5>
+                                <span>AI-powered insights & reports</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">
+                            <div class="match-icon">🎓</div>
+                            <div>
+                                <h5>AI Skills Certified</h5>
+                                <span>+40% productivity • Higher salary bracket</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 2 -->
+            <div class="ai-content reveal" style="margin-bottom: var(--space-4xl);">
+                <div class="ai-visual" style="order: -1;">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #fef9c3, #fef3c7);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fde68a, #fcd34d);">📱
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Social Commerce</h5>
+                                <span>TikTok Shop, Facebook, Instagram</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fecaca, #fca5a5);">🎥
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Livestream Selling</h5>
+                                <span>Live commerce techniques</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">📈
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Digital Marketing</h5>
+                                <span>Ads, SEO, content strategy</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+                            <div class="match-icon">💰</div>
+                            <div>
+                                <h5>Revenue Generation</h5>
+                                <span>Side income + career advancement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-text">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div
+                            style="width: 48px; height: 48px; min-width: 48px; background: linear-gradient(135deg, #d97706, #fbbf24); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.1rem;">
+                            2</div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--gray-900);">Digital
+                            Sales Skills</h3>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Master online
+                        selling, social commerce, and livestream — the fastest-growing revenue channels in Asia.</p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Online sales & social
+                            commerce</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Livestream commerce mastery
+                        </div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Digital marketing
+                            fundamentals</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> E-commerce platform setup
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 3 -->
+            <div class="ai-content reveal" style="margin-bottom: var(--space-4xl);">
+                <div class="ai-text">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div
+                            style="width: 48px; height: 48px; min-width: 48px; background: linear-gradient(135deg, #0e7490, #06b6d4); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.1rem;">
+                            3</div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--gray-900);">Global
+                            Work Skills</h3>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Prepare for
+                        international careers — communication, remote collaboration, and cross-cultural work readiness.
+                    </p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> International work culture
+                        </div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Professional communication
+                        </div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Remote work & collaboration
+                            tools</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Cross-cultural team
+                            management</div>
+                    </div>
+                </div>
+                <div class="ai-visual">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #ecfeff, #cffafe);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #a5f3fc, #67e8f9);">🌍
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Cross-Cultural Skills</h5>
+                                <span>Japan, Korea, EU work culture</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">💬
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Communication</h5>
+                                <span>Business English, Japanese basics</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">🔗
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Remote Collaboration</h5>
+                                <span>Slack, Zoom, project management</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #0e7490, #06b6d4);">
+                            <div class="match-icon">🌏</div>
+                            <div>
+                                <h5>Globally Ready</h5>
+                                <span>Qualified for international placements</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 4 -->
+            <div class="ai-content reveal">
+                <div class="ai-visual" style="order: -1;">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #fef2f2, #fee2e2);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fecaca, #fca5a5);">💡
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Business Basics</h5>
+                                <span>Entrepreneurship fundamentals</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fde68a, #fcd34d);">🛒
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>E-Commerce Setup</h5>
+                                <span>Shopee, TikTok Shop, own website</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">📊
+                            </div>
+                            <div class="ai-node-text">
+                                <h5>Financial Planning</h5>
+                                <span>Budgeting, pricing, cash flow</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #dc2626, #ef4444);">
+                            <div class="match-icon">🚀</div>
+                            <div>
+                                <h5>Launch Your Business</h5>
+                                <span>From worker to entrepreneur</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-text">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+                        <div
+                            style="width: 48px; height: 48px; min-width: 48px; background: linear-gradient(135deg, #dc2626, #f87171); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.1rem;">
+                            4</div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 800; color: var(--gray-900);">
+                            Entrepreneur Skills</h3>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7; margin-bottom: var(--space-lg);">Learn to build
+                        your own micro-business — from online stores to personal branding and e-commerce.</p>
+                    <div class="passport-benefits">
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Startup fundamentals</div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Personal sales & branding
+                        </div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> E-commerce platform setup
+                        </div>
+                        <div class="passport-benefit"><span class="benefit-check">✓</span> Financial literacy for
+                            workers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ECOSYSTEM VALUE ========== -->
+    <section class="section stats-section" style="background: linear-gradient(135deg, #0f172a, #1e293b);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 style="color: white;">Full Workforce Lifecycle</h2>
+                <p style="color: rgba(255,255,255,0.7);">Skills training completes the worker journey — from learning to
+                    earning to living.</p>
+            </div>
+            <div class="stats-grid" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="stat-card">
+                    <div class="stat-icon">🎓</div>
+                    <div class="stat-value">Training</div>
+                    <div class="stat-label">Rison</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💼</div>
+                    <div class="stat-value">Job</div>
+                    <div class="stat-label">HelloJob / SotaTek</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏠</div>
+                    <div class="stat-value">Housing</div>
+                    <div class="stat-label">Rentai / G-Home</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💪</div>
+                    <div class="stat-value">Health</div>
+                    <div class="stat-label">IKIGROUP</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-value">Finance</div>
+                    <div class="stat-label">Basao</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RISON PARTNER ========== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Partner</span>
+                <h2>Powered by Rison</h2>
+                <p>Rison provides the skill development layer of the global workforce ecosystem — upgrading workers
+                    before job placement.</p>
+            </div>
+            <div class="flow-grid stagger-children"
+                style="grid-template-columns: repeat(3, 1fr); max-width: 800px; margin: 0 auto;">
+                <div class="flow-card">
+                    <div class="flow-icon">📚</div>
+                    <h3>Expert Curriculum</h3>
+                    <p>Industry-designed courses built for practical, real-world application.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🏆</div>
+                    <h3>Verified Certificates</h3>
+                    <p>Digital certifications added directly to your Talent Passport.</p>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🚀</div>
+                    <h3>Career Acceleration</h3>
+                    <p>Trained workers match with higher-paying jobs through AI matching.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="section cta-section" id="register">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2>Start Learning Today</h2>
+                <p>Whether you want to master AI tools, launch an online business, or prepare for a global career —
+                    Rison's training programs will upgrade your future.</p>
+                <div class="cta-actions">
+                    <a href="partner-register.html" class="btn btn-accent btn-lg">Register for Courses →</a>
+                    <a href="index.html" class="btn btn-outline btn-lg">Explore Platform</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="background: var(--accent);">🌏</div>
+                        <span>Basao<span style="font-weight:400; opacity:0.5;">OS</span></span>
+                    </div>
+                    <p>Professional training programs enhancing worker skills across AI, digital commerce, and global
+                        readiness — powered by Rison.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="index.html">Home</a>
+                    <a href="talent-import.html">Human Workforce Hub</a>
+                    <a href="tech-export.html">Tech Export</a>
+                    <a href="worker-health.html">Health</a>
+                    <a href="basao-finance.html">Basao Finance</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Training</h4>
+                    <a href="#programs">AI Skills</a>
+                    <a href="#programs">Digital Sales</a>
+                    <a href="#programs">Global Work Skills</a>
+                    <a href="#programs">Entrepreneur Skills</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="index.html">About</a>
+                    <a href="index.html#partners">Partners</a>
+                    <a href="partner-register.html">Register</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Basao Workforce OS. All Rights Reserved.</p>
+                <p class="footer-quote">"Prajna illuminates the mind — Wisdom guides the way."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
