@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Basao AI Agents — Intelligent agents connecting the entire workforce ecosystem: jobs, training, housing, health, and finance.">
+    <title>AI Agents — Basao Workforce OS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌏</text></svg>">
+    <style>
+        /* Agent-specific styles */
+        .agent-network {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        .agent-hub {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0e7490, #06b6d4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            z-index: 2;
+            box-shadow: 0 0 60px rgba(6, 182, 212, 0.4), 0 0 120px rgba(6, 182, 212, 0.15);
+            animation: hubPulse 3s ease-in-out infinite;
+        }
+
+        .agent-hub-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes hubPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 60px rgba(6, 182, 212, 0.4), 0 0 120px rgba(6, 182, 212, 0.15);
+            }
+
+            50% {
+                box-shadow: 0 0 80px rgba(6, 182, 212, 0.6), 0 0 160px rgba(6, 182, 212, 0.25);
+            }
+        }
+
+        .agent-ring {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .agent-node {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .agent-node:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .agent-node-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1rem;
+        }
+
+        .agent-node h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .agent-node .agent-partner {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-node p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+
+        .agent-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #059669;
+            margin-top: 0.75rem;
+        }
+
+        .agent-status::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #059669;
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        /* Agent detail cards */
+        .agent-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+            margin-bottom: var(--space-4xl);
+        }
+
+        .agent-detail:nth-child(even) .agent-detail-visual {
+            order: -1;
+        }
+
+        .agent-detail-info {}
+
+        .agent-detail-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .agent-detail-icon {
+            width: 56px;
+            height: 56px;
+            min-width: 56px;
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .agent-detail-title h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0;
+        }
+
+        .agent-detail-title span {
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .agent-capabilities {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: var(--space-lg);
+        }
+
+        .agent-capability {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-100);
+        }
+
+        .agent-capability-icon {
+            font-size: 1.1rem;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .agent-capability h5 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.15rem;
+        }
+
+        .agent-capability p {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .agent-detail-visual .ai-diagram {
+            min-height: 320px;
+        }
+
+        /* Orchestration flow */
+        .orchestration-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+            margin-top: var(--space-2xl);
+        }
+
+        .orch-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+        }
+
+        .orch-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .orch-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--gray-700);
+            text-align: center;
+        }
+
+        .orch-arrow {
+            font-size: 1.5rem;
+            color: var(--gray-300);
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .agent-ring {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .agent-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .agent-detail:nth-child(even) .agent-detail-visual {
+                order: 0;
+            }
+
+            .orchestration-flow {
+                flex-direction: column;
+            }
+
+            .orch-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header scrolled" id="header">
+        <div class="container">
+            <a href="index.html" class="header-logo" style="color: var(--gray-900);">
+                <div class="logo-icon">🌏</div>
+                <span>Basao<span style="font-weight:400; opacity:0.7;">OS</span></span>
+            </a>
+            <nav class="header-nav" id="headerNav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#">Workforce</a>
+                        <div class="dropdown-menu">
+                            <a href="talent-import.html"><span class="dropdown-icon">🌍</span> Human Workforce Hub</a>
+                            <a href="tech-export.html"><span class="dropdown-icon">💻</span> Tech Talent Export</a>
+                            <a href="worker-training.html"><span class="dropdown-icon">🎓</span> Skills & Training</a>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="#">Services</a>
+                        <div class="dropdown-menu">
+                            <a href="worker-health.html"><span class="dropdown-icon">💪</span> Health & Lifestyle</a>
+                            <a href="basao-finance.html"><span class="dropdown-icon">💰</span> Basao Finance</a>
+                            <a href="ai-agents.html"><span class="dropdown-icon">🤖</span> AI Agents</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#partners">Partners</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="partner-register.html" class="btn btn-outline"
+                        style="color: var(--primary); border-color: var(--primary);">Register</a>
+                    <a href="partner-register.html" class="btn btn-accent">Get Started</a>
+                </div>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero"
+        style="min-height: 90vh; background: linear-gradient(135deg, #0f172a 0%, #1e293b 30%, #164e63 60%, #0e7490 100%);">
+        <div class="hero-grid"></div>
+        <div class="hero-floating">
+            <div class="floating-badge">🤖 Job Agent → Matched 2,847 workers</div>
+            <div class="floating-badge">🏠 Housing Agent → 98% placement</div>
+            <div class="floating-badge">💰 Finance Agent → $12M managed</div>
+            <div class="floating-badge">🎓 Training Agent → 1,200 certified</div>
+        </div>
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 850px; margin: 0 auto;">
+                <span class="section-badge" style="background: rgba(255,255,255,0.15); color: var(--accent-light);">AI
+                    Agent Network</span>
+                <h1 style="font-size: var(--font-size-5xl);">Intelligent Agents <span
+                        class="highlight">Connecting</span>
+                    the Ecosystem</h1>
+                <p style="margin: 0 auto var(--space-xl); max-width: 650px;">7 specialized AI agents working together
+                    to coordinate jobs, training, housing, health, finance, compliance, and operations across the entire
+                    Basao Workforce ecosystem.</p>
+
+                <div
+                    style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: var(--space-2xl);">
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.15);">Autonomous</span>
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.15);">Multi-Agent</span>
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.15);">Real-Time</span>
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.15);">Cross-Partner</span>
+                    <span class="tech-tag"
+                        style="font-size: 0.85rem; padding: 0.4rem 1rem; background: rgba(6,182,212,0.25); color: #67e8f9; border: 1px solid rgba(6,182,212,0.3);">🔥
+                        Worker OS</span>
+                </div>
+
+                <div class="hero-actions" style="justify-content: center;">
+                    <a href="#agents" class="btn btn-accent btn-lg">Explore Agents →</a>
+                    <a href="#orchestrator" class="btn btn-outline btn-lg">See Architecture</a>
+                </div>
+
+                <div class="hero-stats" style="justify-content: center; margin-top: var(--space-2xl);">
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="7">0</div>
+                        <div class="stat-label">AI Agents</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="9">0</div>
+                        <div class="stat-label">Partners Connected</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number" data-target="24" data-suffix="/7">0</div>
+                        <div class="stat-label">Autonomous Ops</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AGENT NETWORK OVERVIEW ========== -->
+    <section class="section" id="agents">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Agent Network</span>
+                <h2>7 Agents, 1 Ecosystem</h2>
+                <p>Each agent specializes in one domain but communicates with all others to deliver seamless workforce
+                    mobility.</p>
+            </div>
+
+            <div class="agent-network reveal">
+                <!-- Central Hub -->
+                <div class="agent-hub">
+                    <div class="agent-hub-icon">🧠</div>
+                    Orchestrator
+                </div>
+
+                <!-- Agent Nodes -->
+                <div class="agent-ring">
+                    <div class="agent-node">
+                        <div class="agent-node-icon" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">🔍
+                        </div>
+                        <h4>Job Matching Agent</h4>
+                        <div class="agent-partner">HelloJob · DMC · Thiên Khôi</div>
+                        <p>AI-powered skill analysis, job recommendation, CV optimization, interview preparation</p>
+                        <div class="agent-status">ACTIVE</div>
+                    </div>
+
+                    <div class="agent-node">
+                        <div class="agent-node-icon" style="background: linear-gradient(135deg, #f3e8ff, #ddd6fe);">🎓
+                        </div>
+                        <h4>Training Agent</h4>
+                        <div class="agent-partner">Rison</div>
+                        <p>Personalized learning paths, skill gap analysis, certification tracking, course matching</p>
+                        <div class="agent-status">ACTIVE</div>
+                    </div>
+
+                    <div class="agent-node">
+                        <div class="agent-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">🏠
+                        </div>
+                        <h4>Housing Agent</h4>
+                        <div class="agent-partner">Rentai · G-Home</div>
+                        <p>Room matching, lease management, rent optimization, maintenance coordination</p>
+                        <div class="agent-status">ACTIVE</div>
+                    </div>
+
+                    <div class="agent-node">
+                        <div class="agent-node-icon" style="background: linear-gradient(135deg, #fef3c7, #fde68a);">💰
+                        </div>
+                        <h4>Finance Agent</h4>
+                        <div class="agent-partner">Basao</div>
+                        <p>Salary wallet, auto-saving, remittance, property investment, budget planning</p>
+                        <div class="agent-status">ACTIVE</div>
+                    </div>
+
+                    <div class="agent-node">
+                        <div class="agent-node-icon" style="background: linear-gradient(135deg, #fce7f3, #fbcfe8);">💪
+                        </div>
+                        <h4>Health Agent</h4>
+                        <div class="agent-partner">IKIGROUP</div>
+                        <p>Meal planning, fitness tracking, health checkup scheduling, wellness recommendations</p>
+                        <div class="agent-status">ACTIVE</div>
+                    </div>
+
+                    <div class="agent-node">
+                        <div class="agent-node-icon" style="background: linear-gradient(135deg, #fee2e2, #fecaca);">📋
+                        </div>
+                        <h4>Compliance Agent</h4>
+                        <div class="agent-partner">DMC · SotaTek</div>
+                        <p>Visa expiry alerts, contract renewal, labor law updates, document verification</p>
+                        <div class="agent-status">ACTIVE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ORCHESTRATOR ========== -->
+    <section class="section section-dark" id="orchestrator">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge" style="background: rgba(6,182,212,0.15);">Master Agent</span>
+                <h2>🧠 The Orchestrator Agent</h2>
+                <p>The central intelligence that coordinates all 7 agents — understanding worker context, predicting
+                    needs, and triggering cross-agent actions automatically.</p>
+            </div>
+
+            <div class="orchestration-flow reveal">
+                <div class="orch-step">
+                    <div class="orch-icon" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">🎓</div>
+                    <div class="orch-label">Training<br>Agent</div>
+                </div>
+                <div class="orch-arrow">→</div>
+                <div class="orch-step">
+                    <div class="orch-icon" style="background: linear-gradient(135deg, #2563eb, #60a5fa);">🔍</div>
+                    <div class="orch-label">Job<br>Agent</div>
+                </div>
+                <div class="orch-arrow">→</div>
+                <div class="orch-step">
+                    <div class="orch-icon" style="background: linear-gradient(135deg, #059669, #34d399);">🏠</div>
+                    <div class="orch-label">Housing<br>Agent</div>
+                </div>
+                <div class="orch-arrow">→</div>
+                <div class="orch-step">
+                    <div class="orch-icon" style="background: linear-gradient(135deg, #ec4899, #f9a8d4);">💪</div>
+                    <div class="orch-label">Health<br>Agent</div>
+                </div>
+                <div class="orch-arrow">→</div>
+                <div class="orch-step">
+                    <div class="orch-icon" style="background: linear-gradient(135deg, #d97706, #fbbf24);">💰</div>
+                    <div class="orch-label">Finance<br>Agent</div>
+                </div>
+            </div>
+
+            <div class="tech-layers stagger-children" style="max-width: 900px; margin-top: var(--space-3xl);">
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #0e7490, #06b6d4);">🧠
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Example: Worker Lands a New Job in Japan</h3>
+                        <p>When a worker gets matched to a job, the Orchestrator automatically triggers a chain of
+                            agent actions across the entire ecosystem.</p>
+                        <div class="tech-tags" style="margin-top: var(--space-sm);">
+                            <span class="tech-tag">1. Training Agent → Schedule language course</span>
+                            <span class="tech-tag">2. Compliance Agent → Start visa process</span>
+                            <span class="tech-tag">3. Housing Agent → Find housing near workplace</span>
+                            <span class="tech-tag">4. Health Agent → Register health insurance</span>
+                            <span class="tech-tag">5. Finance Agent → Setup salary wallet + remittance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #d97706, #fbbf24);">⚡
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Example: Worker's Visa Expiring in 30 Days</h3>
+                        <p>The Compliance Agent detects the expiry and coordinates with other agents to take proactive
+                            action.</p>
+                        <div class="tech-tags" style="margin-top: var(--space-sm);">
+                            <span class="tech-tag">1. Compliance Agent → Alert worker & employer</span>
+                            <span class="tech-tag">2. Job Agent → Check new opportunities if needed</span>
+                            <span class="tech-tag">3. Finance Agent → Review savings for extension costs</span>
+                            <span class="tech-tag">4. Housing Agent → Adjust lease if contract changes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #059669, #10b981);">💡
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Example: Worker Wants to Invest Savings</h3>
+                        <p>The Finance Agent coordinates with other agents to provide smart investment advice based on
+                            the worker's full lifecycle data.</p>
+                        <div class="tech-tags" style="margin-top: var(--space-sm);">
+                            <span class="tech-tag">1. Finance Agent → Analyze savings & risk profile</span>
+                            <span class="tech-tag">2. Housing Agent → Show investment properties near demand</span>
+                            <span class="tech-tag">3. Job Agent → Predict income stability for investment</span>
+                            <span class="tech-tag">4. Orchestrator → Execute investment via Basao wallet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DETAILED AGENTS ========== -->
+    <section class="section" id="agent-details">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Deep Dive</span>
+                <h2>Agent Capabilities</h2>
+                <p>Each agent brings specialized AI intelligence powered by ecosystem partner data.</p>
+            </div>
+
+            <!-- Agent 1: Job Matching -->
+            <div class="agent-detail reveal">
+                <div class="agent-detail-info">
+                    <div class="agent-detail-header">
+                        <div class="agent-detail-icon"
+                            style="background: linear-gradient(135deg, #2563eb, #60a5fa); color: white;">🔍</div>
+                        <div class="agent-detail-title">
+                            <h3>Job Matching Agent</h3>
+                            <span>HelloJob · DMC · Thiên Khôi · SotaTek</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7;">Analyzes worker skills, experience, and
+                        career goals to find optimal job matches across the global network. Handles CV generation,
+                        interview prep, and employer matching.</p>
+                    <div class="agent-capabilities">
+                        <div class="agent-capability">
+                            <div class="agent-capability-icon">🧠</div>
+                            <div>
+                                <h5>AI Skill Analysis</h5>
+                                <p>Evaluate worker skills against 10,000+ job profiles</p>
+                            </div>
+                        </div>
+                        <div class="agent-capability">
+                            <div class="agent-capability-icon">📝</div>
+                            <div>
+                                <h5>Auto CV Builder</h5>
+                                <p>Generate optimized CVs in Japanese, Korean, English, German</p>
+                            </div>
+                        </div>
+                        <div class="agent-capability">
+                            <div class="agent-capability-icon">🎯</div>
+                            <div>
+                                <h5>Smart Matching</h5>
+                                <p>93% match accuracy using NLP + historical placement data</p>
+                            </div>
+                        </div>
+                        <div class="agent-capability">
+                            <div class="agent-capability-icon">🎤</div>
+                            <div>
+                                <h5>Interview Coach</h5>
+                                <p>AI mock interviews with real-time feedback in target language</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-detail-visual">
+                    <div class="ai-diagram">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">
+                                👤</div>
+                            <div class="ai-node-text">
+                                <h5>Worker Profile + Skills</h5>
+                                <span>Experience, certifications, goals</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe);">
+                                🤖</div>
+                            <div class="ai-node-text">
+                                <h5>AI Skill Matching Engine</h5>
+                                <span>NLP analysis + market demand data</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
+                                🌍</div>
+                            <div class="ai-node-text">
+                                <h5>Global Job Network</h5>
+                                <span>Japan, Korea, EU, Singapore</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result">
+                            <div class="match-icon">✅</div>
+                            <div>
+                                <h5>Match: 94% Compatibility</h5>
+                                <span>Auto-generated CV + interview scheduled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent 2: Training -->
+            <div class="agent-detail reveal">
+                <div class="agent-detail-info">
+                    <div class="agent-detail-header">
+                        <div class="agent-detail-icon"
+                            style="background: linear-gradient(135deg, #7c3aed, #a78bfa); color: white;">🎓</div>
+                        <div class="agent-detail-title">
+                            <h3>Training Agent</h3>
+                            <span>Powered by Rison</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7;">Creates personalized learning paths based on
+                        skill gaps, target jobs, and career goals. Tracks certifications and automatically triggers
+                        training when new opportunities arise.</p>
+                    <div class="agent-capabilities">
+                        <div class="agent-capability">
+                            <div class="agent-capability-icon">📊</div>
+                            <div>
+                                <h5>Skill Gap Analysis</h5>
+                                <p>Compare current skills vs target job requirements</p>
+                            </div>
+                        </div>
+                        <div class="agent-capability">
+                            <div class="agent-capability-icon">🗺️</div>
+                            <div>
+                                <h5>Learning Path Generator</h5>
+                                <p>AI-curated courses: AI tools, digital sales, languages</p>
+                            </div>
+                        </div>
+                        <div class="agent-capability">
+                            <div class="agent-capability-icon">🏆</div>
+                            <div>
+                                <h5>Certification Tracker</h5>
+                                <p>Track progress, remind deadlines, verify certificates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-detail-visual">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #f5f3ff, #ede9fe);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #f3e8ff, #ddd6fe);">
+                                📈</div>
+                            <div class="ai-node-text">
+                                <h5>Skill Gap Detected</h5>
+                                <span>Missing: Japanese N3 + AI basics</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe);">
+                                📚</div>
+                            <div class="ai-node-text">
+                                <h5>Rison Learning Path</h5>
+                                <span>3 courses • 8 weeks • AI + Language</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
+                                🏆</div>
+                            <div class="ai-node-text">
+                                <h5>Certification Earned</h5>
+                                <span>→ Job Agent notified for matching</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">
+                            <div class="match-icon">🚀</div>
+                            <div>
+                                <h5>Salary +40% After Certification</h5>
+                                <span>Training → Skill → Job → Income upgrade</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent 3: Finance -->
+            <div class="agent-detail reveal">
+                <div class="agent-detail-info">
+                    <div class="agent-detail-header">
+                        <div class="agent-detail-icon"
+                            style="background: linear-gradient(135deg, #d97706, #fbbf24); color: white;">💰</div>
+                        <div class="agent-detail-title">
+                            <h3>Finance Agent</h3>
+                            <span>Powered by Basao</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--gray-500); line-height: 1.7;">Manages the full financial lifecycle — from
+                        salary wallet to international remittance, savings plans, and property investment — turning
+                        worker income into long-term wealth.</p>
+                    <div class="agent-capabilities">
+                        <div class="agent-capability">
+                            <div class="agent-capability-icon">💳</div>
+                            <div>
+                                <h5>Salary Wallet</h5>
+                                <p>Receive, manage, transfer salary — no bank needed</p>
+                            </div>
+                        </div>
+                        <div class="agent-capability">
+                            <div class="agent-capability-icon">🌍</div>
+                            <div>
+                                <h5>Smart Remittance</h5>
+                                <p>AI picks best rate & timing for international transfers</p>
+                            </div>
+                        </div>
+                        <div class="agent-capability">
+                            <div class="agent-capability-icon">🏠</div>
+                            <div>
+                                <h5>Auto-Invest</h5>
+                                <p>Route savings into verified property funds automatically</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agent-detail-visual">
+                    <div class="ai-diagram" style="background: linear-gradient(135deg, #fffbeb, #fef3c7);">
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #fde68a, #fcd34d);">
+                                💴</div>
+                            <div class="ai-node-text">
+                                <h5>Salary Received: ¥250,000</h5>
+                                <span>Auto-split by AI budget planner</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">
+                                💸</div>
+                            <div class="ai-node-text">
+                                <h5>Remit ¥80K → Vietnam</h5>
+                                <span>Best rate at $1 = 25,320 VND</span>
+                            </div>
+                        </div>
+                        <div class="ai-node">
+                            <div class="ai-node-icon" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
+                                🐷</div>
+                            <div class="ai-node-text">
+                                <h5>Auto-Save ¥50K</h5>
+                                <span>Target: Property fund in 12 months</span>
+                            </div>
+                        </div>
+                        <div class="ai-match-result" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+                            <div class="match-icon">🏠</div>
+                            <div>
+                                <h5>Income → Save → Invest → Wealth</h5>
+                                <span>Worker owns rental property in 18 months</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WORKER SUPER APP VISION ========== -->
+    <section class="section section-alt" id="superapp">
+        <div class="container">
+            <div class="section-header reveal" style="max-width: 800px;">
+                <span class="section-badge">Vision</span>
+                <h2>The Worker Operating System</h2>
+                <p>All 7 agents working together create a <strong>Worker Super App</strong> — the first operating
+                    system purpose-built for global workers.</p>
+            </div>
+
+            <div class="flow-grid stagger-children"
+                style="grid-template-columns: repeat(4, 1fr); margin-top: var(--space-2xl);">
+                <div class="flow-card">
+                    <div class="flow-icon">🔍</div>
+                    <h3>Find Jobs</h3>
+                    <p>AI matches you with global opportunities based on skills and goals.</p>
+                    <span class="partner-tag">Job Agent</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🎓</div>
+                    <h3>Learn & Grow</h3>
+                    <p>Personalized training with certification that unlocks higher-paying jobs.</p>
+                    <span class="partner-tag">Training Agent</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🏠</div>
+                    <h3>Live Well</h3>
+                    <p>Housing matched to your workplace with smart lease management.</p>
+                    <span class="partner-tag">Housing Agent</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">💪</div>
+                    <h3>Stay Healthy</h3>
+                    <p>Nutrition, fitness, and health checkup coordination for peak performance.</p>
+                    <span class="partner-tag">Health Agent</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">💰</div>
+                    <h3>Build Wealth</h3>
+                    <p>Wallet, savings, remittance, and property investment in one place.</p>
+                    <span class="partner-tag">Finance Agent</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">📋</div>
+                    <h3>Stay Legal</h3>
+                    <p>Visa tracking, contract management, and compliance automation.</p>
+                    <span class="partner-tag">Compliance Agent</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🧠</div>
+                    <h3>AI Assistant</h3>
+                    <p>The Orchestrator predicts your needs and coordinates everything automatically.</p>
+                    <span class="partner-tag">Orchestrator</span>
+                </div>
+                <div class="flow-card">
+                    <div class="flow-icon">🌐</div>
+                    <h3>Community</h3>
+                    <p>Connect with other workers, share experiences, and access legal support.</p>
+                    <span class="partner-tag">Platform</span>
+                </div>
+            </div>
+
+            <div class="reveal" style="text-align: center; margin-top: var(--space-3xl);">
+                <div
+                    style="display: inline-block; background: linear-gradient(135deg, rgba(14,116,144,0.06), rgba(6,182,212,0.08)); border: 2px solid rgba(14,116,144,0.15); border-radius: var(--radius-xl); padding: var(--space-xl) var(--space-3xl);">
+                    <p
+                        style="font-size: var(--font-size-lg); font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">
+                        Think: <span style="color: var(--primary);">Grab</span> for drivers · <span
+                            style="color: var(--primary);">Gojek</span> for gig workers
+                    </p>
+                    <p style="font-size: var(--font-size-md); color: var(--gray-500); margin: 0;">
+                        But built for <strong>global workforce mobility</strong> — powered by 7 AI agents and 9
+                        ecosystem partners.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PARTNER INTEGRATION ========== -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge" style="background: rgba(6,182,212,0.15);">Integration</span>
+                <h2>Agent ↔ Partner Integration Map</h2>
+                <p>Each agent is powered by real partner data and services.</p>
+            </div>
+
+            <div class="tech-layers stagger-children" style="max-width: 900px;">
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #2563eb, #60a5fa);">🔍
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Job Agent → HelloJob + DMC + Thiên Khôi + SotaTek</h3>
+                        <p>Job data, employer profiles, visa requirements, tech talent pool from all recruitment
+                            partners.</p>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">🎓
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Training Agent → Rison</h3>
+                        <p>AI tools, digital sales, livestream commerce, language courses, global work skills programs.
+                        </p>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #059669, #34d399);">🏠
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Housing Agent → Rentai / G-Home + Rison International</h3>
+                        <p>Room inventory, pricing data, lease management, construction pipeline for worker housing.</p>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #ec4899, #f9a8d4);">💪
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Health Agent → IKIGROUP</h3>
+                        <p>Meal planning data, gym schedules, nutrition tracking, health checkup coordination.</p>
+                    </div>
+                </div>
+                <div class="tech-layer">
+                    <div class="tech-layer-number" style="background: linear-gradient(135deg, #d97706, #fbbf24);">💰
+                    </div>
+                    <div class="tech-layer-content">
+                        <h3>Finance Agent → Basao</h3>
+                        <p>Worker wallet API, investment funds, AI property valuation, remittance network.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="section cta-section" id="cta">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2>Experience the Future of Workforce Management</h2>
+                <p>7 AI agents, 9 partners, 1 platform — the most comprehensive Worker Operating System ever built.
+                    Join the ecosystem today.</p>
+                <div class="cta-actions">
+                    <a href="partner-register.html" class="btn btn-accent btn-lg">Join the Ecosystem →</a>
+                    <a href="index.html#partners" class="btn btn-outline btn-lg">View All Partners</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="background: var(--accent);">🌏</div>
+                        <span>Basao<span style="font-weight:400; opacity:0.5;">OS</span></span>
+                    </div>
+                    <p>The Global Workforce Mobility Platform — 7 AI agents connecting workers, employers, and partners
+                        across the entire ecosystem.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+                        <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="footer-social" aria-label="GitHub">◐</a>
+                        <a href="#" class="footer-social" aria-label="Email">✉</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Workforce</h4>
+                    <a href="talent-import.html">Human Workforce Hub</a>
+                    <a href="tech-export.html">Tech Talent Export</a>
+                    <a href="worker-training.html">Skills & Training</a>
+                    <a href="ai-agents.html">AI Agents</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="worker-health.html">Health & Lifestyle</a>
+                    <a href="basao-finance.html">Basao Finance</a>
+                    <a href="partner-register.html">Partner Registration</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="index.html">About</a>
+                    <a href="index.html#technology">Technology</a>
+                    <a href="index.html#partners">Partners</a>
+                    <a href="#cta">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Basao Workforce OS. All Rights Reserved.</p>
+                <p class="footer-quote">"Bát Nhã soi tâm — Trí tuệ dẫn đường"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
